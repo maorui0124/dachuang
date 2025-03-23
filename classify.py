@@ -18,7 +18,7 @@ test_texts = test_df['TEXT'].tolist()
 test_labels = test_df['label'].tolist()
 
 # 3. 使用BERT的tokenizer将文本转为BERT模型需要的格式
-tokenizer = BertTokenizer.from_pretrained('bert-base-chinese')
+tokenizer = BertTokenizer.from_pretrained('bert-base-chinese', mirror='tuna')
 
 def tokenize_function(examples):
     return tokenizer(examples['TEXT'], padding='max_length', truncation=True, max_length=128)
